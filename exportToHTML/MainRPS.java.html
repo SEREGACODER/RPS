@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>MainRPS.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #cc7832;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainRPS.java</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">import </span><span class="s0">java.util.Random</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">java.util.Scanner</span><span class="s1">;</span>
+
+<span class="s1">public class </span><span class="s0">MainRPS {</span>
+    <span class="s1">public  static void </span><span class="s0">main(String[] args) {</span>
+
+        <span class="s0">Scanner scanner = </span><span class="s1">new </span><span class="s0">Scanner(System.in)</span><span class="s1">;</span>
+
+        <span class="s1">while </span><span class="s0">(</span><span class="s1">true</span><span class="s0">) {</span>
+            <span class="s0">String[] rps = {</span><span class="s2">&quot;к&quot;</span><span class="s1">, </span><span class="s2">&quot;б&quot;</span><span class="s1">, </span><span class="s2">&quot;н&quot;</span><span class="s0">}</span><span class="s1">;</span>
+            <span class="s0">String computerMove = rps[</span><span class="s1">new </span><span class="s0">Random().nextInt(rps.length)]</span><span class="s1">;</span>
+
+            <span class="s0">String playerMove</span><span class="s1">;</span>
+
+            <span class="s1">while </span><span class="s0">(</span><span class="s1">true</span><span class="s0">) {</span>
+                <span class="s0">System.out.println(</span><span class="s2">&quot;Камень, ножницы, бумага? Выбирай!&quot;</span><span class="s0">)</span><span class="s1">;</span>
+                <span class="s0">playerMove = scanner.nextLine()</span><span class="s1">;</span>
+                <span class="s1">if </span><span class="s0">(playerMove.equals(</span><span class="s2">&quot;к&quot;</span><span class="s0">) || playerMove.equals(</span><span class="s2">&quot;б&quot;</span><span class="s0">) || playerMove.equals(</span><span class="s2">&quot;н&quot;</span><span class="s0">)) {</span>
+                    <span class="s1">break;</span>
+                <span class="s0">}</span>
+                <span class="s0">System.out.println(playerMove + </span><span class="s2">&quot; Ты ввел чушь,  введи: к -  для камень, б - для бумага, н - для ножниц.&quot;</span><span class="s0">)</span><span class="s1">;</span>
+            <span class="s0">}</span>
+
+            <span class="s0">System.out.println(</span><span class="s2">&quot;Компукшер выбрал: &quot; </span><span class="s0">+ computerMove)</span><span class="s1">;</span>
+
+            <span class="s1">if </span><span class="s0">(playerMove.equals(computerMove)) {</span>
+                <span class="s0">System.out.println(</span><span class="s2">&quot;Ничья&quot;</span><span class="s0">)</span><span class="s1">;</span>
+            <span class="s0">} </span><span class="s1">else if </span><span class="s0">(playerMove.equals(</span><span class="s2">&quot;к&quot;</span><span class="s0">)) {</span>
+                <span class="s1">if </span><span class="s0">(computerMove.equals(</span><span class="s2">&quot;б&quot;</span><span class="s0">)) {</span>
+                    <span class="s0">System.out.println(</span><span class="s2">&quot;Поражение&quot;</span><span class="s0">)</span><span class="s1">;</span>
+
+                <span class="s0">} </span><span class="s1">else if </span><span class="s0">(computerMove.equals(</span><span class="s2">&quot;н&quot;</span><span class="s0">)) {</span>
+                    <span class="s0">System.out.println(</span><span class="s2">&quot;Победа&quot;</span><span class="s0">)</span><span class="s1">;</span>
+                <span class="s0">}</span>
+            <span class="s0">} </span><span class="s1">else if </span><span class="s0">(playerMove.equals(</span><span class="s2">&quot;б&quot;</span><span class="s0">)) {</span>
+                <span class="s1">if </span><span class="s0">(computerMove.equals(</span><span class="s2">&quot;н&quot;</span><span class="s0">)) {</span>
+                    <span class="s0">System.out.println(</span><span class="s2">&quot;Поражение&quot;</span><span class="s0">)</span><span class="s1">;</span>
+
+                <span class="s0">} </span><span class="s1">else if </span><span class="s0">(computerMove.equals(</span><span class="s2">&quot;к&quot;</span><span class="s0">)) {</span>
+                    <span class="s0">System.out.println(</span><span class="s2">&quot;Победа&quot;</span><span class="s0">)</span><span class="s1">;</span>
+                <span class="s0">}</span>
+            <span class="s0">} </span><span class="s1">else if </span><span class="s0">(playerMove.equals(</span><span class="s2">&quot;н&quot;</span><span class="s0">)) {</span>
+                <span class="s1">if </span><span class="s0">(computerMove.equals(</span><span class="s2">&quot;к&quot;</span><span class="s0">)) {</span>
+                    <span class="s0">System.out.println(</span><span class="s2">&quot;Поражение&quot;</span><span class="s0">)</span><span class="s1">;</span>
+
+                <span class="s0">} </span><span class="s1">else if </span><span class="s0">(computerMove.equals(</span><span class="s2">&quot;б&quot;</span><span class="s0">)) {</span>
+                    <span class="s0">System.out.println(</span><span class="s2">&quot;Победа&quot;</span><span class="s0">)</span><span class="s1">;</span>
+                <span class="s0">}</span>
+            <span class="s0">}</span>
+            <span class="s0">System.out.println(</span><span class="s2">&quot;Ещё разок?&quot;</span><span class="s0">)</span><span class="s1">;</span>
+            <span class="s0">String playAgain = scanner.nextLine()</span><span class="s1">;</span>
+
+            <span class="s1">if </span><span class="s0">(!playAgain.equals(</span><span class="s2">&quot;+&quot;</span><span class="s0">)){</span>
+                <span class="s1">break;</span>
+            <span class="s0">}</span>
+        <span class="s0">}</span>
+        <span class="s0">scanner.close()</span><span class="s1">;</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+</pre>
+</body>
+</html>
